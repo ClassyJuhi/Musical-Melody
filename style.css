@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    color: black;
+    background: #ecf0f3;
+}
+.mainContainer{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+}
+nav{
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #ffffff,3px 3px 5px #ceced1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.navleft{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    height: 50px;
+    width: auto;
+    margin-right: 5px;
+}
+nav h1{
+    color: #1DA1F2;
+}
+.container{
+    padding: 10px 30px;
+    margin: 15px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #ecf0f3;
+    box-shadow: -3px -3px 7px #ffffff,3px 3px 5px #ceced1;
+    z-index: 1;
+    position: relative;
+}
+.container1{
+    margin-top: 100px;
+}
+.container:before{
+    content: "";
+    border-radius: 25px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    left: 2px;
+    z-index: -1;
+    box-shadow: inset  -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+}
+.container img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.songContainer{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    display: none;
+}
+.songContainer{
+    margin-top: 50px;
+}
+.container .singer{
+    color: #1DA1F2;
+}
+.songContainer img{
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    box-shadow: inset  -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+}
+.song:checked ~ .mainContainer .container{
+    display: none;
+}
+.songContainer label{
+    padding-top: 50px;
+    padding-right: 50px;
+    align-self: flex-end;
+}
+#playSong1::checked ~ .mainContainer .Container{
+    display: flex;
+}
+#song1:checked ~ .mainContainer .songContainer1,
+#song2:checked ~ .mainContainer .songContainer2,
+#song3:checked ~ .mainContainer .songContainer3,
+#song4:checked ~ .mainContainer .songContainer4,
+#song5:checked ~ .mainContainer .songContainer5,
+#song6:checked ~ .mainContainer .songContainer6,
+#song7:checked ~ .mainContainer .songContainer7,
+#song8:checked ~ .mainContainer .songContainer8{
+    display: flex;
+}
+input[type="radio"]{
+    display: none;
+}
+
+@media (max-width:900px){
+    .mainContainer{
+        display: flex;
+    }
+    nav{
+        width: 95%;
+        padding: 5px;
+    }
+    nav .navleft{
+        width: auto;
+    }
+    .container{
+        width: 85%;
+        padding: 10px 15px;
+    }
+    .container .singer{
+        display: none;
+    }
+    .songContainer img{
+        height: 300px;
+        max-width: 300px;
+        margin: 0 10px;
+    }
+}
